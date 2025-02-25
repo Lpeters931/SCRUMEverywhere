@@ -35,6 +35,7 @@ public class UserFileManager {
             // Write basic user info to file
             out.println("username:" + username);
             out.println("password:" + password);
+            out.println("money: 0");
 
             System.out.println("User file created successfully for: " + username);
             return true;
@@ -46,7 +47,7 @@ public class UserFileManager {
     }
 
     // Add additional information to a user's file
-    public boolean addUserInfo(String username, String key, String value) {
+    public boolean updateUserInfo(String username, String key, String value) {
         if (!userExists(username)) {
             System.out.println("User doesn't exist: " + username);
             return false;
@@ -162,53 +163,6 @@ public class UserFileManager {
             System.err.println("Error deleting user file: " + e.getMessage());
             return false;
         }
-    }
-
-    public int[] turnStringToArray(String string) {
-        // First pass to count the number of integers
-        int count = 0;
-        boolean inNumber = false;
-
-        for (int i = 0; i < string.length(); i++) {
-            char c = string.charAt(i);
-
-            if (Character.isDigit(c)) {
-                if (!inNumber) {
-                    count++;
-                    inNumber = true;
-                }
-            } else {
-                inNumber = false;
-            }
-        }
-
-        // Create array with the correct size
-        int[] array = new int[count];
-        int index = 0;
-        inNumber = false;
-        int currentNumber = 0;
-
-        // Second pass to extract the integers
-        for (int i = 0; i < string.length(); i++) {
-            char c = string.charAt(i);
-
-            if (Character.isDigit(c)) {
-                currentNumber = currentNumber * 10 + (c - '0');
-                inNumber = true;
-            } else if (inNumber) {
-                // We've finished reading a number
-                array[index++] = currentNumber;
-                currentNumber = 0;
-                inNumber = false;
-            }
-        }
-
-        // Check if we need to add the last number
-        if (inNumber) {
-            array[index] = currentNumber;
-        }
-
-        return array;
     }
 
 }
