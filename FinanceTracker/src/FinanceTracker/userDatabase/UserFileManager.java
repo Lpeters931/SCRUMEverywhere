@@ -18,14 +18,14 @@ public class UserFileManager {
     }
 
     // Creates a new user file with their information
-    public boolean createUserFile(String username, String password) {
+    public void createUserFile(String username, String password) {
         // Generate file path for this user
+        username = encryption(username);
         String filePath = directoryPath + File.separator + username + ".txt";
 
         // Check if user already exists
         if (userExists(username)) {
             System.out.println("User already exists: " + username);
-            return false;
         }
 
         try (FileWriter fw = new FileWriter(filePath);
@@ -33,51 +33,62 @@ public class UserFileManager {
              PrintWriter out = new PrintWriter(bw)) {
 
             // Write basic user info to file
-            out.println("username:" + encryption(username));
-            out.println("password:" + encryption(password));
-            out.println("money: 0");
-
-            System.out.println("User file created successfully for: " + username);
-            return true;
+            out.println(encryption("username: ") + username);
+            out.println(encryption("password: ") + encryption(password));
+            out.println(encryption("money: ") + "0");
 
         } catch (IOException e) {
             System.err.println("Error creating user file: " + e.getMessage());
-            return false;
         }
     }
 
     // Add additional information to a user's file
     public boolean updateUserInfo(String username, String key, String value) {
+        username = encryption(username);
+        key = encryption(key);
+        value = encryption(value);
+
         if (!userExists(username)) {
             System.out.println("User doesn't exist: " + username);
             return false;
         }
-        value = encryption(value);
 
         String filePath = directoryPath + File.separator + username + ".txt";
 
         try {
             // Read existing content
-            List<String> fileContent = Files.readAllLines(Paths.get(filePath));
+            Path path = Paths.get(filePath);
+            List<String> fileContent = Files.readAllLines(path);
+            boolean keyFound = false;
 
             // Updates relevant information
             for (int i = 0; i < fileContent.size(); i++) {
-                if (fileContent.get(i).startsWith(key + ":")) {
-                    fileContent.set(i, key + ":" + value);
-                    break;
+                if (fileContent.get(i).startsWith(key + ": ")) {
+                    fileContent.set(i, key + ": " + value);
+                    keyFound = true;
                 }
+            }
+
+            // If key was found and updated, write back to file
+            if (keyFound) {
+                Files.write(path, fileContent);
+                return true;
+            } else {
+                return false;
             }
 
         } catch (IOException e) {
             System.err.println("Error updating user file: " + e.getMessage());
             return false;
         }
-        return true;
     }
 
 
     // Retrieve a specific piece of user information
     public String getUserInfo(String username, String key) {
+        username = encryption(username);
+        key = encryption(key);
+
         if (!userExists(username)) {
             return null;
         }
@@ -88,7 +99,7 @@ public class UserFileManager {
             String line;
             while ((line = br.readLine()) != null) {
                 if (line.startsWith(key + ":")) {
-                    return encryption(line.substring(key.length() + 1));
+                    return encryption(line.substring(key.length() + 2));
                 }
             }
             return null;
@@ -100,11 +111,13 @@ public class UserFileManager {
 
     // Verify user credentials
     public boolean verifyUser(String username, String password) {
+        username = encryption(username);
+        password = encryption(password);
         if (!userExists(username)) {
             return false;
         }
 
-        String storedPassword = getUserInfo(username, "password");
+        String storedPassword = getUserInfo(username, encryption("password"));
         return storedPassword != null && storedPassword.equals(password);
     }
 
@@ -117,8 +130,8 @@ public class UserFileManager {
     private String encryption(String string){
         char[] chars = string.toCharArray();
         StringBuilder encryptedString = new StringBuilder();
-        for (int i = 0; i < chars.length; i++) {
-            encryptedString.append(flipCharacter(chars[i]));
+        for (char aChar : chars) {
+            encryptedString.append(flipCharacter(aChar));
         }
         return encryptedString.toString();
     }
@@ -183,6 +196,7 @@ public class UserFileManager {
 
     // Delete a user
     public boolean deleteUser(String username) {
+        username = encryption(username);
         if (!userExists(username)) {
             return false;
         }
