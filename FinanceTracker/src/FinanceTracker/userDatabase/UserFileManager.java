@@ -33,8 +33,8 @@ public class UserFileManager {
              PrintWriter out = new PrintWriter(bw)) {
 
             // Write basic user info to file
-            out.println("username:" + username);
-            out.println("password:" + password);
+            out.println("username:" + encryption(username));
+            out.println("password:" + encryption(password));
             out.println("money: 0");
 
             System.out.println("User file created successfully for: " + username);
@@ -52,6 +52,7 @@ public class UserFileManager {
             System.out.println("User doesn't exist: " + username);
             return false;
         }
+        value = encryption(value);
 
         String filePath = directoryPath + File.separator + username + ".txt";
 
@@ -59,30 +60,19 @@ public class UserFileManager {
             // Read existing content
             List<String> fileContent = Files.readAllLines(Paths.get(filePath));
 
-            // Check if key already exists
-            boolean keyExists = false;
+            // Updates relevant information
             for (int i = 0; i < fileContent.size(); i++) {
                 if (fileContent.get(i).startsWith(key + ":")) {
                     fileContent.set(i, key + ":" + value);
-                    keyExists = true;
                     break;
                 }
             }
-
-            // If key doesn't exist, add it
-            if (!keyExists) {
-                fileContent.add(key + ":" + value);
-            }
-
-            // Write updated content back to file
-            Files.write(Paths.get(filePath), fileContent);
-
-            return true;
 
         } catch (IOException e) {
             System.err.println("Error updating user file: " + e.getMessage());
             return false;
         }
+        return true;
     }
 
 
@@ -98,7 +88,7 @@ public class UserFileManager {
             String line;
             while ((line = br.readLine()) != null) {
                 if (line.startsWith(key + ":")) {
-                    return line.substring(key.length() + 1);
+                    return encryption(line.substring(key.length() + 1));
                 }
             }
             return null;
@@ -124,30 +114,71 @@ public class UserFileManager {
         return Files.exists(Paths.get(filePath));
     }
 
-    // Get a map of all user information
-    public Map<String, String> getAllUserInfo(String username) {
-        if (!userExists(username)) {
-            return null;
+    private String encryption(String string){
+        char[] chars = string.toCharArray();
+        StringBuilder encryptedString = new StringBuilder();
+        for (int i = 0; i < chars.length; i++) {
+            encryptedString.append(flipCharacter(chars[i]));
         }
+        return encryptedString.toString();
+    }
 
-        Map<String, String> userInfo = new HashMap<>();
-        String filePath = directoryPath + File.separator + username + ".txt";
-
-        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                int separatorPos = line.indexOf(':');
-                if (separatorPos > 0) {
-                    String key = line.substring(0, separatorPos);
-                    String value = line.substring(separatorPos + 1);
-                    userInfo.put(key, value);
-                }
-            }
-            return userInfo;
-        } catch (IOException e) {
-            System.err.println("Error reading user file: " + e.getMessage());
-            return null;
-        }
+    private char flipCharacter(char letter){
+        return switch (letter) {
+            case 'a' -> 'z';
+            case 'A' -> 'Z';
+            case 'b' -> 'y';
+            case 'B' -> 'Y';
+            case 'c' -> 'x';
+            case 'C' -> 'X';
+            case 'd' -> 'w';
+            case 'D' -> 'W';
+            case 'e' -> 'v';
+            case 'E' -> 'V';
+            case 'f' -> 'u';
+            case 'F' -> 'U';
+            case 'g' -> 't';
+            case 'G' -> 'T';
+            case 'h' -> 's';
+            case 'H' -> 'S';
+            case 'i' -> 'r';
+            case 'I' -> 'R';
+            case 'j' -> 'q';
+            case 'J' -> 'Q';
+            case 'k' -> 'p';
+            case 'K' -> 'P';
+            case 'l' -> 'o';
+            case 'L' -> 'O';
+            case 'm' -> 'n';
+            case 'M' -> 'N';
+            case 'n' -> 'm';
+            case 'N' -> 'M';
+            case 'o' -> 'l';
+            case 'O' -> 'L';
+            case 'p' -> 'k';
+            case 'P' -> 'K';
+            case 'q' -> 'j';
+            case 'Q' -> 'J';
+            case 'r' -> 'i';
+            case 'R' -> 'I';
+            case 's' -> 'h';
+            case 'S' -> 'H';
+            case 't' -> 'g';
+            case 'T' -> 'G';
+            case 'u' -> 'f';
+            case 'U' -> 'F';
+            case 'v' -> 'e';
+            case 'V' -> 'E';
+            case 'w' -> 'd';
+            case 'W' -> 'D';
+            case 'x' -> 'c';
+            case 'X' -> 'C';
+            case 'y' -> 'b';
+            case 'Y' -> 'B';
+            case 'z' -> 'a';
+            case 'Z' -> 'A';
+            default -> letter;
+        };
     }
 
     // Delete a user
