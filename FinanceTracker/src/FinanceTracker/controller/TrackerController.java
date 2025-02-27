@@ -21,9 +21,12 @@ public class TrackerController {
                 case "2":
                     String depositing = input.depositMenu();
                     manager.addIncome(depositing, test);
-
+                    input.displayUser(test);
                     break;
                 case "3":
+                    String withdrawing = input.withdrawMenu();
+                    manager.withdrawMoney(withdrawing, test);
+                    input.displayUser(test);
                     break;
                 case "4":
                     break;

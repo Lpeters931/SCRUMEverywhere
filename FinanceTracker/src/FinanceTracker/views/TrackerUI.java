@@ -1,5 +1,7 @@
 package FinanceTracker.views;
 
+import FinanceTracker.models.User;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -43,7 +45,40 @@ public class TrackerUI {
             System.out.println("ENTER SOMETHING");
         }
 
+        try {
+            float amount = Float.parseFloat(input);
+        }catch(NumberFormatException e){
+            System.out.println("THAT WASNT A NUMBER!!!!!!");
+            return depositMenu();
+        }
+
         return input;
+    }
+
+    public String withdrawMenu() {
+        String input = "";
+        StringBuilder builder = new StringBuilder();
+        builder.append("\nPlease Enter the amount you are withdrawing: \n");
+        System.out.println(builder.toString());
+
+        try{
+            input = br.readLine();
+        }catch(IOException e){
+            System.out.println("ENTER SOMETHING");
+        }
+
+        try {
+            float amount = Float.parseFloat(input);
+        }catch(NumberFormatException e){
+            System.out.println("THAT WASNT A NUMBER!!!!!!");
+            return depositMenu();
+        }
+
+        return input;
+    }
+
+    public void displayUser(User user){
+        System.out.println(user.toString());
     }
 
 
