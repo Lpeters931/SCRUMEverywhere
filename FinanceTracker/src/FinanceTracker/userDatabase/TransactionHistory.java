@@ -1,9 +1,9 @@
 package FinanceTracker.userDatabase;
 
 public class TransactionHistory {
-    private int balance;
-    private int totalIncome;
-    private int totalExpense;
+    private float balance;
+    private float totalIncome;
+    private float totalExpense;
 
     private float updateUserHistory(float moneyGained, float moneySpent, float balance){
         balance += moneyGained;

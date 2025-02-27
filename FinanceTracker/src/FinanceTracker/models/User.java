@@ -1,5 +1,7 @@
 package FinanceTracker.models;
 
+import FinanceTracker.userDatabase.fileManagers.UserFileManager;
+
 public class User {
     private String userName;
     private String password;
