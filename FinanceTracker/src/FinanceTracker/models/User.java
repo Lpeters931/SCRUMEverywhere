@@ -34,4 +34,20 @@ public class User {
     public void setMoney(float money) {
         this.money += money;
     }
+
+    public void withdraw(float amount) {
+        money -= amount;
+    }
+
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("UserName:");
+        builder.append(userName);
+        builder.append("\nTotal Balance:");
+        builder.append(money);
+        return builder.toString();
+    }
+
 }

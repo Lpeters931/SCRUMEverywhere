@@ -6,6 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="7dacd4de-111e-44dc-bab3-469ae1a4d828" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/controller/TrackerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/controller/TrackerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/models/IncomeExpenseTracker.java" beforeDir="false" afterPath="$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/models/IncomeExpenseTracker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/views/TrackerUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/views/TrackerUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FinanceTracker/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/FinanceTracker/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,20 +51,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="SCRUMEverywhere" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -71,6 +84,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -91,11 +109,24 @@
       <workItem from="1740590411389" duration="1590000" />
       <workItem from="1740592034678" duration="509000" />
       <workItem from="1740592568675" duration="157000" />
-      <workItem from="1740598244014" duration="326000" />
+      <workItem from="1740598244014" duration="695000" />
+      <workItem from="1740601865898" duration="357000" />
+      <workItem from="1740629086684" duration="1253000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
