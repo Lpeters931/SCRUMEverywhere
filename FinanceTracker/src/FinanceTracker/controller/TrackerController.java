@@ -7,7 +7,7 @@ import FinanceTracker.views.TrackerUI;
 public class TrackerController {
     TrackerUI input = new TrackerUI();
     IncomeExpenseTracker manager = new IncomeExpenseTracker();
-    User test = new User("XPenguinGodX", "1234", 1.0f);
+    User test = new User("XPenguinGodX", "1234", 0.0f);
 
     public void financeTracker() {
         boolean running = true;
