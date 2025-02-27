@@ -9,6 +9,7 @@ public class GoalManager {
     public GoalManager() {
         goals = new ArrayList<>();
     }
+
     public void addGoal(FinancialGoal goal) {
         goals.add(goal);
         System.out.println("Added new goal: " + goal.getName());
@@ -23,6 +24,7 @@ public class GoalManager {
         }
         System.out.println("❌ Goal not found.");
     }
+
     public void adjustGoal(String goalName, double newTarget) {
         for (FinancialGoal goal : goals) {
             if (goal.getName().equalsIgnoreCase(goalName)) {
@@ -32,6 +34,7 @@ public class GoalManager {
         }
         System.out.println("❌ Goal not found.");
     }
+
     public void pauseGoal(String goalName) {
         for (FinancialGoal goal : goals) {
             if (goal.getName().equalsIgnoreCase(goalName)) {
@@ -41,15 +44,17 @@ public class GoalManager {
         }
         System.out.println("❌ Goal not found.");
     }
+
     public void listGoals() {
-        if(goals.isEmpty()) {
-            System.out.println("No financial goals have been set.");
-        }else{
+        if (goals.isEmpty()) {
+            System.out.println("No financial goals set.");
+        } else {
             for (FinancialGoal goal : goals) {
                 System.out.println(goal);
             }
         }
     }
+
     public void generateReport() {
         System.out.println("\n📊 Financial Goal Report:");
         double totalSavings = 0, totalInvestments = 0, totalSpending = 0, totalDebt = 0, totalEmergency = 0;

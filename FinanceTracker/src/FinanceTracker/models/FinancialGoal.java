@@ -4,40 +4,47 @@ public class FinancialGoal {
     private String name;
     private double targetAmount;
     private double currentAmount;
-    private String category; //like Savings, Spending, Investment, etc.
-    private String timeframe; // Daily, Weekly, Monthly, Yearly
-    private boolean isPaused;
+    private String category;
+    private String timeframe;
+    private boolean isPaused; // Allows pausing the goal
 
     public FinancialGoal(String name, double targetAmount, String category, String timeframe) {
         this.name = name;
         this.targetAmount = targetAmount;
         this.category = category;
         this.timeframe = timeframe;
-        this.currentAmount = 0; // Start at 0
+        this.currentAmount = 0;
         this.isPaused = false;
     }
 
     public void addProgress(double amount) {
         if (isPaused) {
-            System.out.println("Goal " + name + " is paused");
+            System.out.println("Goal '" + name + "' is paused.");
             return;
         }
+
         this.currentAmount += amount;
+        System.out.println(getProgressBar());
+
         if (this.currentAmount >= targetAmount) {
-            System.out.println("Congratulations! Goal '" + name + "' reached!");
+            System.out.println("🎉 Congratulations! Goal '" + name + "' reached!");
         } else {
             checkWarnings();
         }
     }
 
     public void adjustGoal(double newTarget) {
-        this.targetAmount += newTarget;
-        System.out.println("Goal " + name + " updated  to $" + newTarget);
+        this.targetAmount = newTarget;
+        System.out.println("Goal '" + name + "' updated to $" + newTarget);
     }
 
     public void pauseGoal() {
         this.isPaused = !this.isPaused;
         System.out.println("Goal '" + name + "' is now " + (isPaused ? "paused" : "active") + ".");
+    }
+
+    public double getProgressPercentage() {
+        return (currentAmount / targetAmount) * 100;
     }
 
     private void checkWarnings() {
@@ -56,6 +63,7 @@ public class FinancialGoal {
         int filledLength = (int) ((getProgressPercentage() / 100) * barLength);
         String bar = "[" + "=".repeat(filledLength) + " ".repeat(barLength - filledLength) + "] "
                 + String.format("%.2f", getProgressPercentage()) + "%";
+
         if (getProgressPercentage() >= 100) {
             return "✅ " + bar;
         } else if (getProgressPercentage() >= 90) {
@@ -65,32 +73,6 @@ public class FinancialGoal {
         } else {
             return "🟢 " + bar;
         }
-    }
-
-
-    // Check progress percentage
-    public double getProgressPercentage() {
-        return (currentAmount / targetAmount) * 100;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public double getTargetAmount() {
-        return targetAmount;
-    }
-
-    public double getCurrentAmount() {
-        return currentAmount;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public String getTimeframe() {
-        return timeframe;
     }
 
     @Override
