@@ -33,6 +33,9 @@ public class TrackerController {
                 case "5":
                     break;
                 case "6":
+                    input.displayTransactionHistory(test.getMoney(),test.getTotalIncome(), test.getTotalSpent());
+                    break;
+                case "7":
                     running = false;
                     input.goodBye();
                     break;

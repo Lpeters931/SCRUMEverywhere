@@ -20,7 +20,8 @@ public class TrackerUI {
         builder.append("\n3. Withdraw Money\n");
         builder.append("\n4. Set finance goals\n");
         builder.append("\n5. Spend money\n");
-        builder.append("\n6. Exit\n");
+        builder.append("\n6. View Transaction History\n");
+        builder.append("\n7. Exit\n");
         System.out.println(builder.toString());
 
         try {
@@ -83,6 +84,17 @@ public class TrackerUI {
 
     public void goodBye(){
         System.out.println("Goodbye for now");
+    }
+
+
+    public void displayTransactionHistory(float balance,float totalIncome,float expenses){
+        StringBuilder builder = new StringBuilder();
+        builder.append("\nTRANSACTION HISTORY \n");
+        builder.append("\nBALANCE: " + balance + "\n");
+        builder.append("\nTOTAL INCOME: " + totalIncome + "\n");
+        builder.append("\nEXPENSES: " + expenses + "\n");
+        System.out.println(builder.toString());
+
     }
 
 
