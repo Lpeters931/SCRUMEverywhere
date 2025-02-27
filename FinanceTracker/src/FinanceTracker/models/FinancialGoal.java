@@ -17,8 +17,20 @@ public class FinancialGoal {
         this.isPaused = false;
     }
 
+    public float getCurrentAmount() {
+        return currentAmount;
+    }
+
     public String getName() {
         return name;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public String getTimeframe() {
+        return timeframe;
     }
 
     public void addProgress(float amount) {

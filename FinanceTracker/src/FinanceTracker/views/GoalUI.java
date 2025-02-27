@@ -3,7 +3,7 @@ import FinanceTracker.controllers.GoalManager;
 import FinanceTracker.models.FinancialGoal;
 import java.util.Scanner;
 public class GoalUI {
-    public static void main(String[] args) {
+    public void run() {
         GoalManager goalManager = new GoalManager();
         Scanner scanner = new Scanner(System.in);
 
