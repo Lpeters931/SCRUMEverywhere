@@ -81,6 +81,10 @@ public class TrackerUI {
         System.out.println(user.toString());
     }
 
+    public void goodBye(){
+        System.out.println("Goodbye for now");
+    }
+
 
 
 

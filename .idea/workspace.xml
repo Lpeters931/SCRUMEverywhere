@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7dacd4de-111e-44dc-bab3-469ae1a4d828" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/controller/TrackerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/controller/TrackerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/models/IncomeExpenseTracker.java" beforeDir="false" afterPath="$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/models/IncomeExpenseTracker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/views/TrackerUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/views/TrackerUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -109,7 +107,7 @@
       <workItem from="1740592568675" duration="157000" />
       <workItem from="1740598244014" duration="695000" />
       <workItem from="1740601865898" duration="357000" />
-      <workItem from="1740629086684" duration="2808000" />
+      <workItem from="1740629086684" duration="3360000" />
     </task>
     <servers />
   </component>
