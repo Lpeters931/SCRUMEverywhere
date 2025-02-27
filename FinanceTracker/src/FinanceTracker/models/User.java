@@ -5,7 +5,7 @@ import FinanceTracker.userDatabase.fileManagers.UserFileManager;
 public class User {
     private String userName;
     private String password;
-    private float money;
+    private float money = 0.0f;
 
     public User(String userName, String password, float money) {
         setUserName(userName);
@@ -34,6 +34,22 @@ public class User {
     }
 
     public void setMoney(float money) {
-        this.money = money;
+        this.money += money;
     }
+
+    public void withdraw(float amount) {
+        money -= amount;
+    }
+
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("UserName:");
+        builder.append(userName);
+        builder.append("\nTotal Balance:");
+        builder.append(money);
+        return builder.toString();
+    }
+
 }
