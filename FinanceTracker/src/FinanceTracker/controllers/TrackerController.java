@@ -1,4 +1,4 @@
-package FinanceTracker.controller;
+package FinanceTracker.controllers;
 
 import FinanceTracker.models.IncomeExpenseTracker;
 import FinanceTracker.models.User;

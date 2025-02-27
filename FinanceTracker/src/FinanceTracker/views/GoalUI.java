@@ -26,7 +26,7 @@ public class GoalUI {
                     System.out.print("Enter goal name: ");
                     String name = scanner.nextLine();
                     System.out.print("Enter target amount: ");
-                    double amount = scanner.nextDouble();
+                    float amount = scanner.nextFloat();
                     scanner.nextLine();
                     System.out.print("Enter category (Savings, Spending, Investment, Debt Repayment, Emergency Fund): ");
                     String category = scanner.nextLine();
@@ -40,7 +40,7 @@ public class GoalUI {
                     System.out.print("Enter goal name to update: ");
                     String goalName = scanner.nextLine();
                     System.out.print("Enter amount to add: ");
-                    double addAmount = scanner.nextDouble();
+                    float addAmount = scanner.nextFloat();
                     goalManager.updateGoalProgress(goalName, addAmount);
                     break;
 
@@ -48,7 +48,7 @@ public class GoalUI {
                     System.out.print("Enter goal name to adjust: ");
                     String adjustName = scanner.nextLine();
                     System.out.print("Enter new target amount: ");
-                    double newTarget = scanner.nextDouble();
+                    float newTarget = scanner.nextFloat();
                     goalManager.adjustGoal(adjustName, newTarget);
                     break;
 

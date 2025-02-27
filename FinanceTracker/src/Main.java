@@ -1,4 +1,4 @@
-import FinanceTracker.controller.TrackerController;
+import FinanceTracker.controllers.TrackerController;
 
 public class Main {
     public static void main(String[] args) {
