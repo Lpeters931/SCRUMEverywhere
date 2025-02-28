@@ -28,6 +28,7 @@ public class TrackerUI {
             input = br.readLine();
         } catch (IOException e) {
             System.out.println("ENTER SOMETHING");
+            return displayMenu();
         }
 
         return input;

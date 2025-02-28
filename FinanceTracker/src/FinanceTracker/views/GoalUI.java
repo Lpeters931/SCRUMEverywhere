@@ -3,6 +3,7 @@ import FinanceTracker.controllers.GoalManager;
 import FinanceTracker.models.FinancialGoal;
 import java.util.Scanner;
 public class GoalUI {
+
     public void run() {
         GoalManager goalManager = new GoalManager();
         Scanner scanner = new Scanner(System.in);
@@ -68,7 +69,6 @@ public class GoalUI {
 
                 case 7:
                     System.out.println("Exiting... 🚪");
-                    scanner.close();
                     return;
 
                 default:
