@@ -33,6 +33,8 @@ public class TrackerController {
                     goal.run();
                     break;
                 case "5":
+                    manager.trackExpense(input.spendMoney(), test);
+                    System.out.println(test);
                     break;
                 case "6":
                     input.displayTransactionHistory(test.getMoney(),test.getTotalIncome(), test.getTotalSpent());

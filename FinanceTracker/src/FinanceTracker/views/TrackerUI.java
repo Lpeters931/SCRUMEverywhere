@@ -98,6 +98,30 @@ public class TrackerUI {
 
     }
 
+    public String spendMoney(){
+        String input = "";
+        StringBuilder builder = new StringBuilder();
+        builder.append("\nPlease Enter the amount spent: \n");
+        System.out.println(builder.toString());
+
+        try {
+         input = br.readLine();
+        }catch(IOException e){
+            System.out.println("ENTER SOMETHING");
+        }
+
+        try{
+            float amount = Float.parseFloat(input);
+        }catch(NumberFormatException e){
+            System.out.println("THAT WASNT A NUMBER!!!!!!");
+        }
+
+        return input;
+
+    }
+
+
+
 
 
 
