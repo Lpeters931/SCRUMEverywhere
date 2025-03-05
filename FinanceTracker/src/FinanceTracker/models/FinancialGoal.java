@@ -2,13 +2,13 @@ package FinanceTracker.models;
 
 public class FinancialGoal {
     private String name;
-    private double targetAmount;
-    private double currentAmount;
+    private float targetAmount;
+    private float currentAmount;
     private String category;
     private String timeframe;
     private boolean isPaused; // Allows pausing the goal
 
-    public FinancialGoal(String name, double targetAmount, String category, String timeframe) {
+    public FinancialGoal(String name, float targetAmount, String category, String timeframe) {
         this.name = name;
         this.targetAmount = targetAmount;
         this.category = category;
@@ -17,7 +17,23 @@ public class FinancialGoal {
         this.isPaused = false;
     }
 
-    public void addProgress(double amount) {
+    public float getCurrentAmount() {
+        return currentAmount;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public String getTimeframe() {
+        return timeframe;
+    }
+
+    public void addProgress(float amount) {
         if (isPaused) {
             System.out.println("Goal '" + name + "' is paused.");
             return;
@@ -33,7 +49,7 @@ public class FinancialGoal {
         }
     }
 
-    public void adjustGoal(double newTarget) {
+    public void adjustGoal(float newTarget) {
         this.targetAmount = newTarget;
         System.out.println("Goal '" + name + "' updated to $" + newTarget);
     }

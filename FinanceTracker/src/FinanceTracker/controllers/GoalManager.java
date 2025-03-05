@@ -15,7 +15,7 @@ public class GoalManager {
         System.out.println("Added new goal: " + goal.getName());
     }
 
-    public void updateGoalProgress(String goalName, double amount) {
+    public void updateGoalProgress(String goalName, float amount) {
         for (FinancialGoal goal : goals) {
             if (goal.getName().equalsIgnoreCase(goalName)) {
                 goal.addProgress(amount);
@@ -25,7 +25,7 @@ public class GoalManager {
         System.out.println("❌ Goal not found.");
     }
 
-    public void adjustGoal(String goalName, double newTarget) {
+    public void adjustGoal(String goalName, float newTarget) {
         for (FinancialGoal goal : goals) {
             if (goal.getName().equalsIgnoreCase(goalName)) {
                 goal.adjustGoal(newTarget);
