@@ -1,24 +1,15 @@
 package FinanceTracker.models;
 
-import java.util.ArrayList;
+import FinanceTracker.userDatabase.fileManagers.UserFileManager;
 
 public class User {
+    private TransactionHistory transactionHistory;
     private String userName;
     private String password;
     private float money = 0.0f;
-    private float totalIncome = 0.0f;
-    private float totalSpent = 0.0f;
-
-
-    public float getTotalIncome() {
-        return totalIncome;
-    }
-
-    public float getTotalSpent() {
-        return totalSpent;
-    }
 
     public User(String userName, String password, float money) {
+        transactionHistory = new TransactionHistory();
         setUserName(userName);
         setPassword(password);
         setMoney(money);
@@ -46,12 +37,22 @@ public class User {
 
     public void setMoney(float money) {
         this.money += money;
-        this.totalIncome += money;
     }
 
     public void withdraw(float amount) {
         money -= amount;
-        totalSpent += amount;
+    }
+
+    public float getBalance() {
+        return transactionHistory.getBalance();
+    }
+
+    public float getTotalIncome(){
+        return transactionHistory.getTotalIncome();
+    }
+
+    public float getTotalExpense(){
+        return transactionHistory.getTotalExpense();
     }
 
 
@@ -62,10 +63,6 @@ public class User {
         builder.append(userName);
         builder.append("\nTotal Balance:");
         builder.append(money);
-        builder.append("\nTotal Income:");
-        builder.append(totalIncome);
-        builder.append("\nTotal Spent:");
-        builder.append(totalSpent);
         return builder.toString();
     }
 
