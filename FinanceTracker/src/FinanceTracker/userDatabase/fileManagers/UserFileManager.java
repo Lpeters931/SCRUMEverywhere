@@ -18,7 +18,7 @@ public class UserFileManager {
     }
 
     // Creates a new user file with their information
-    public void createUserFile(String username, String password) {
+    public void createUserFile(String username, String password, float money) {
         // Generate file path for this user
         username = encryption(username);
         String filePath = directoryPath + File.separator + username + ".txt";
@@ -35,7 +35,9 @@ public class UserFileManager {
             // Write basic user info to file
             out.println(encryption("username: ") + username);
             out.println(encryption("password: ") + encryption(password));
-            out.println(encryption("money: ") + "0");
+            out.println(encryption("money: ") + money);
+            out.println(encryption("income: ") + encryption("0"));
+            out.println(encryption("expense: " + encryption("0")));
 
         } catch (IOException e) {
             System.err.println("Error creating user file: " + e.getMessage());
@@ -49,7 +51,6 @@ public class UserFileManager {
         value = encryption(value);
 
         if (!userExists(username)) {
-            System.out.println("User doesn't exist: " + username);
             return false;
         }
 
@@ -76,13 +77,11 @@ public class UserFileManager {
             } else {
                 return false;
             }
-
         } catch (IOException e) {
             System.err.println("Error updating user file: " + e.getMessage());
             return false;
         }
     }
-
 
     // Retrieve a specific piece of user information
     public String getUserInfo(String username, String key) {
@@ -127,13 +126,47 @@ public class UserFileManager {
         return Files.exists(Paths.get(filePath));
     }
 
-    private String encryption(String string){
-        char[] chars = string.toCharArray();
-        StringBuilder encryptedString = new StringBuilder();
-        for (char aChar : chars) {
-            encryptedString.append(flipCharacter(aChar));
+    private boolean checkForFloat(String potentialFloat) {
+        try{
+            Float.parseFloat(potentialFloat);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
         }
-        return encryptedString.toString();
+    }
+
+    private String encryption(String string){
+        StringBuilder encryptedString = new StringBuilder();
+
+        if(checkForFloat(string)){
+            char[] nums = string.toCharArray();
+            for (char num : nums) {
+                encryptedString.append(num);
+            }
+            return encryptedString.toString();
+        }else {
+            char[] chars = string.toCharArray();
+            for (char aChar : chars) {
+                encryptedString.append(flipCharacter(aChar));
+            }
+            return encryptedString.toString();
+        }
+    }
+
+    private char flipNum(char num){
+        return switch (num) {
+            case '0' -> '9';
+            case '1' -> '8';
+            case '2' -> '7';
+            case '3' -> '6';
+            case '4' -> '5';
+            case '5' -> '4';
+            case '6' -> '3';
+            case '7' -> '2';
+            case '8' -> '1';
+            case '9' -> '0';
+            default -> num;
+        };
     }
 
     private char flipCharacter(char letter){

@@ -3,11 +3,13 @@ package FinanceTracker.models;
 import FinanceTracker.userDatabase.fileManagers.UserFileManager;
 
 public class User {
+    private TransactionHistory transactionHistory;
     private String userName;
     private String password;
     private float money = 0.0f;
 
     public User(String userName, String password, float money) {
+        transactionHistory = new TransactionHistory();
         setUserName(userName);
         setPassword(password);
         setMoney(money);
@@ -39,6 +41,18 @@ public class User {
 
     public void withdraw(float amount) {
         money -= amount;
+    }
+
+    public float getBalance() {
+        return transactionHistory.getBalance();
+    }
+
+    public float getTotalIncome(){
+        return transactionHistory.getTotalIncome();
+    }
+
+    public float getTotalExpense(){
+        return transactionHistory.getTotalExpense();
     }
 
 

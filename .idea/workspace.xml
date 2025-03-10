@@ -6,6 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="7dacd4de-111e-44dc-bab3-469ae1a4d828" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/models/IncomeExpenseTracker.java" beforeDir="false" afterPath="$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/models/IncomeExpenseTracker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/userDatabase/TransactionHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/models/TransactionHistory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/userDatabase/fileManagers/TransactionsHistoryFileManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/userDatabase/fileManagers/UserFileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/userDatabase/fileManagers/UserFileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SCRUMEverywhere/FinanceTracker/controller/TrackerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SCRUMEverywhere/FinanceTracker/controller/TrackerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SCRUMEverywhere/FinanceTracker/models/IncomeExpenseTracker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SCRUMEverywhere/FinanceTracker/models/IncomeExpenseTracker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SCRUMEverywhere/FinanceTracker/models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SCRUMEverywhere/FinanceTracker/models/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SCRUMEverywhere/FinanceTracker/userDatabase/UserFileManager.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,8 +97,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.22855.74" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.22855.74" />
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
       </set>
     </attachedChunks>
   </component>
@@ -109,6 +118,8 @@
       <workItem from="1740629086684" duration="3424000" />
       <workItem from="1740632552965" duration="1000" />
       <workItem from="1740674650615" duration="689000" />
+      <workItem from="1741022067329" duration="2759000" />
+      <workItem from="1741225168702" duration="2000" />
     </task>
     <servers />
   </component>
@@ -125,16 +136,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/models/IncomeExpenseTracker.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

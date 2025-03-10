@@ -9,7 +9,8 @@ public class IncomeExpenseTracker {
             System.out.println("This cant be done");
         }else {
             float income = Float.parseFloat(amount);
-            user.setMoney(income);
+
+            user.setMoney(user.getMoney() + income);
         }
 
     }
