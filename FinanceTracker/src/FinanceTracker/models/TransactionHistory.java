@@ -1,9 +1,9 @@
-package FinanceTracker.userDatabase;
+package FinanceTracker.models;
 
 public class TransactionHistory {
-    private int balance;
-    private int totalIncome;
-    private int totalExpense;
+    private float balance;
+    private float totalIncome;
+    private float totalExpense;
 
     private float updateUserHistory(float moneyGained, float moneySpent, float balance){
         balance += moneyGained;
@@ -31,5 +31,29 @@ public class TransactionHistory {
         balance -= moneySpent;
         updateUserHistory(0, moneySpent, balance);
         totalIncome += moneySpent;
+    }
+
+    public float getBalance() {
+        return balance;
+    }
+
+    private void setBalance(float balance) {
+        this.balance = balance;
+    }
+
+    public float getTotalIncome() {
+        return totalIncome;
+    }
+
+    private void setTotalIncome(float totalIncome) {
+        this.totalIncome = totalIncome;
+    }
+
+    public float getTotalExpense() {
+        return totalExpense;
+    }
+
+    private void setTotalExpense(float totalExpense) {
+        this.totalExpense = totalExpense;
     }
 }
