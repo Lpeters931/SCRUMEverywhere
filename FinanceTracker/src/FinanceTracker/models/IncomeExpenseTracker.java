@@ -34,7 +34,7 @@ public class IncomeExpenseTracker {
         if(amount.isEmpty() || user == null){
             System.out.println("This cant be done");
         }else if(user.getMoney() <= 0.0f ){
-            System.out.println("You are broke 0_0");
+            System.out.println("You are broke how did you spend that 0_0");
         }else if(expense > user.getMoney()){
             System.out.println("You dont have enough money -_-\n");
         }else{

@@ -8,9 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/controllers/TrackerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/controllers/TrackerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/models/IncomeExpenseTracker.java" beforeDir="false" afterPath="$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/models/IncomeExpenseTracker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/views/TrackerUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/views/TrackerUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinanceTracker/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/FinanceTracker/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SCRUMEverywhere/FinanceTracker/models/IncomeExpenseTracker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SCRUMEverywhere/FinanceTracker/models/IncomeExpenseTracker.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,6 +116,8 @@
       <workItem from="1740719092032" duration="763000" />
       <workItem from="1740794045580" duration="5000" />
       <workItem from="1741021755801" duration="3815000" />
+      <workItem from="1741194855337" duration="295000" />
+      <workItem from="1741195501231" duration="11000" />
     </task>
     <servers />
   </component>
@@ -145,12 +145,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/controllers/TrackerController.java</url>
-          <line>32</line>
+          <line>33</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/controllers/TrackerController.java</url>
-          <line>16</line>
+          <line>17</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>

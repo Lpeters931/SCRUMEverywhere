@@ -11,6 +11,7 @@ public class TrackerController {
     IncomeExpenseTracker manager = new IncomeExpenseTracker();
     User test = new User("XPenguinGodX", "1234", 0.0f);
 
+
     public void financeTracker() {
         boolean running = true;
         while (running) {
