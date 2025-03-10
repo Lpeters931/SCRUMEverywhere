@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7dacd4de-111e-44dc-bab3-469ae1a4d828" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/controllers/TrackerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/controllers/TrackerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/models/IncomeExpenseTracker.java" beforeDir="false" afterPath="$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/models/IncomeExpenseTracker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/views/TrackerUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/views/TrackerUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinanceTracker/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/FinanceTracker/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +19,9 @@
         <option value="Enum" />
       </list>
     </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="origin/Track-income-and-expenses" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -134,26 +132,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/models/IncomeExpenseTracker.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/controllers/TrackerController.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/FinanceTracker/src/FinanceTracker/controllers/TrackerController.java</url>
-          <line>16</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
