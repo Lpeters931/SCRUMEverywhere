@@ -55,6 +55,9 @@ public class User {
         return transactionHistory.getTotalExpense();
     }
 
+    public TransactionHistory getTransactionHistory() {
+        return transactionHistory;
+    }
 
     @Override
     public String toString() {
